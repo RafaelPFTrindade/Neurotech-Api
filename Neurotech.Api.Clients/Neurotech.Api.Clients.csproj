@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Neurotech.Api\Models\InputModel.cs" Link="Models\InputModel.cs" />
+    <Compile Include="..\Neurotech.Api\Models\RegisterModel.cs" Link="Models\RegisterModel.cs" />
+    <Compile Include="..\Neurotech.Application\ValueObjects\InputVO.cs" Link="ValueObjects\InputVO.cs" />
+    <Compile Include="..\Neurotech.Application\ValueObjects\OutputVO.cs" Link="ValueObjects\OutputVO.cs" />
+    <Compile Include="..\Neurotech.Application\ValueObjects\ResultVO.cs" Link="ValueObjects\ResultVO.cs" />
+    <Compile Include="..\Neurotech.Application\ValueObjects\RuleResultVO.cs" Link="ValueObjects\RuleResultVO.cs" />
+    <Compile Include="..\Neurotech.Application\ValueObjects\RulesResultsVO.cs" Link="ValueObjects\RulesResultsVO.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="ValueObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Refit" Version="5.1.67" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>
