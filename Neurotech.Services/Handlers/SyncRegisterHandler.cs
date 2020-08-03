@@ -41,6 +41,7 @@ namespace Neurotech.Services.Handlers
                 {
                     throw new Exception("Problema na comunicação com o motor Neurotech");
                 }
+
                 return DeserializeResponse<ResultVO>(result.Content);
             }
         }
