@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neurotech.Services", "Neuro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neurotech.Api.Clients", "Neurotech.Api.Clients\Neurotech.Api.Clients.csproj", "{4E66EE8E-C185-4842-A4D8-83B6A773C38D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neurotech.Api.Tests", "Neurotech.Api.Tests\Neurotech.Api.Tests.csproj", "{351CD217-AD12-4079-843A-6D094B510954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4E66EE8E-C185-4842-A4D8-83B6A773C38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E66EE8E-C185-4842-A4D8-83B6A773C38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E66EE8E-C185-4842-A4D8-83B6A773C38D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351CD217-AD12-4079-843A-6D094B510954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351CD217-AD12-4079-843A-6D094B510954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351CD217-AD12-4079-843A-6D094B510954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351CD217-AD12-4079-843A-6D094B510954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

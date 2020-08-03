@@ -11,6 +11,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Neurotech.Application.Exceptions;
 
 namespace Neurotech.Services.Handlers
 {
@@ -35,14 +36,21 @@ namespace Neurotech.Services.Handlers
             httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "text/plain; application/json");
             var stringContent = PrepararBody(request);
             var content = new StringContent(stringContent, Encoding.UTF32, "application/json");
-            using (var result = await httpClient.PostAsync($"/services/rest/workflow/submit", content))
+            try
             {
-                if (result.StatusCode != HttpStatusCode.OK)
+                using (var result = await httpClient.PostAsync($"/services/rest/workflow/submit", content))
                 {
-                    throw new Exception("Problema na comunicação com o motor Neurotech");
-                }
+                    if (result.StatusCode != HttpStatusCode.OK)
+                    {
+                        throw new ConexaoNeurotechException();
+                    }
 
-                return DeserializeResponse<ResultVO>(result.Content);
+                    return DeserializeResponse<ResultVO>(result.Content);
+                }
+            }
+            catch
+            {
+                throw new ConexaoNeurotechException();
             }
         }
 

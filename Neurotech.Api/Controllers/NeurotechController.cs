@@ -35,13 +35,20 @@ namespace Neurotech.Api.Controllers
         [Route("sync-register")]
         public async Task<IActionResult> Post([FromBody] RegisterModel model)
         {
-            var command = new RegisterCommand(_mapper.Map<SubmitVO>(model));
-            if (model.Credenciais != null)
+            try
             {
-                command = new RegisterCommand(_mapper.Map<SubmitVO>(model), _mapper.Map<AuthenticationVO>(model.Credenciais), model.Credenciais.nmCodigoFilial);
+
+                var command = new RegisterCommand(_mapper.Map<SubmitVO>(model));
+                if (model.Credenciais != null)
+                {
+                    command = new RegisterCommand(_mapper.Map<SubmitVO>(model), _mapper.Map<AuthenticationVO>(model.Credenciais), model.Credenciais.nmCodigoFilial);
+                }
+                var result = _mapper.Map<ResultModel>(await _mediator.Send(command));
+                return Ok(result);
+            } catch (Exception e)
+            {
+                return BadRequest(e);
             }
-            var result = _mapper.Map<ResultModel>(await _mediator.Send(command));
-            return Ok(result);
         }
     }
 }
