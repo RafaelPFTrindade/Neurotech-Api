@@ -33,9 +33,13 @@ namespace Neurotech.Api.Controllers
         /// <returns>Resposta obtida pelo motor após análise</returns>
         [HttpPost]
         [Route("sync-register")]
-        public async Task<IActionResult> Post([FromBody]RegisterModel model)
+        public async Task<IActionResult> Post([FromBody] RegisterModel model)
         {
             var command = new RegisterCommand(_mapper.Map<SubmitVO>(model));
+            if (model.Credenciais != null)
+            {
+                command = new RegisterCommand(_mapper.Map<SubmitVO>(model), _mapper.Map<AuthenticationVO>(model.Credenciais), model.Credenciais.nmCodigoFilial);
+            }
             var result = _mapper.Map<ResultModel>(await _mediator.Send(command));
             return Ok(result);
         }

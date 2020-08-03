@@ -47,12 +47,13 @@ namespace Neurotech.Services.Handlers
 
         private string PrepararBody(RegisterCommand request)
         {
-            var Login = configuration.GetValue<string>("Neurotech:Login");
-            var Password = configuration.GetValue<string>("Neurotech:Password");
+            if (request.Authentication is null)
+            {
+                var Login = configuration.GetValue<string>("Neurotech:Login");
+                var Password = configuration.GetValue<string>("Neurotech:Password");
 
-            request.Authentication = new AuthenticationVO(Login, Password);
-            request.Properties = new PropertiesVO[1];
-            request.Properties[0] = new PropertiesVO("FILIAL_ID", "0"); 
+                request.Authentication = new AuthenticationVO(Login, Password);
+            }
 
             return JsonConvert.SerializeObject(request, Formatting.Indented);
         }
