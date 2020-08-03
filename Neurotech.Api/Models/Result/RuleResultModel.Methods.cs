@@ -11,7 +11,7 @@ namespace Neurotech.Api.Models
         public RuleResultModel(RuleResultVO model)
         {
             Name = model.Name;
-            Inputs = model.Inputs?.Select(i => new ResultInputModel(i.Name, i.Value, i.Description, i.Order, i.Visible)).ToArray();
+            Inputs = model.Inputs?.Select(i => new ResultInputModel(i)).ToArray();
             EndTime = model.EndTime;
             ParentRuleName = model.ParentRuleName;
             ResultCompleteDescription = model.ResultCompleteDescription;

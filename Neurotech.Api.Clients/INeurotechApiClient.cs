@@ -3,20 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Neurotech.Application.ValueObjects;
 using Neurotech.Api.Models;
 
 namespace Neurotech.Api.Clients
 {
     public interface INeurotechApiClient
     {
-
         /// <summary>
-        /// Recurso para registrar 
+        /// Recurso para consultar o motor Neurotech
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
+        /// <remarks></remarks>
+        /// <param name="model">Modelo com os parâmetros de entrada</param>
+        /// <returns>Resposta obtida pelo motor após análise</returns>
         [Post("/api/neurotech/")]
-        Task<ResultVO> Post(RegisterModel model);
+        Task<ResultModel> Post(RegisterModel model);
     }
 }
