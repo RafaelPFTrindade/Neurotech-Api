@@ -15,7 +15,7 @@ namespace Neurotech.Api.Clients
         /// <remarks></remarks>
         /// <param name="model">Modelo com os parâmetros de entrada</param>
         /// <returns>Resposta obtida pelo motor após análise</returns>
-        [Post("/api/neurotech/")]
+        [Post("/api/neurotech/sync-register")]
         Task<ResultModel> Post(RegisterModel model);
     }
 }
