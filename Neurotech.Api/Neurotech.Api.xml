@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Neurotech.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Neurotech.Api.Controllers.NeurotechController.Post(Neurotech.Api.Models.RegisterModel)">
+            <summary>
+            Recurso para consultar o motor Neurotech
+            </summary>
+            <remarks></remarks>
+            <param name="model">Modelo com os parâmetros de entrada</param>
+            <returns>Resposta obtida pelo motor após análise</returns>
+        </member>
+        <member name="P:Neurotech.Api.Models.CredenciaisModel.nmCodigoAssociado">
+            <summary>
+             Este código representa o cadastro do cliente na base da Neurotech.
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.CredenciaisModel.nmCodigoFilial">
+            <summary>
+            É o código da filial que está submetendo a proposta. Informar 0 se não possuir filiais.
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.CredenciaisModel.nmSenha">
+            <summary>
+            Senha de utilização do Webservice, por filial
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.InputModel.NmParametro">
+            <summary>
+             Nome do parâmetro de entrada. Exemplo: USUARIO, RETORNO_FILTRO_VARIAVEIS, RETORNO_FILTRO_REGEXES
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.InputModel.VlParametro">
+            <summary>
+            Valor do parâmetro.
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RegisterModel.IdProposta">
+            <summary>
+            Identificação da Proposta
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RegisterModel.NmPolitica">
+            <summary>
+            Nome da Política cadastrada na aplicação que será chamada no Webservice
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RegisterModel.TagVersaoPolitica">
+            <summary>
+            Versão da política que deve ser usada na submissão da proposta. Deixando em branco, será usada a versão mais recente. 
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RegisterModel.NmFluxoResultado">
+            <summary>
+            Guarda a informação de que variável dentro do Workflow guarda o resultado final do fluxo. Normalmente deve ser igual a FLX_PRINCIPAL.
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RegisterModel.Credenciais">
+            <summary>
+            Dados para identificação do serviço chamador. Deixando em branco, utilizaremos o usuário do appsettings.
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RegisterModel.LsParametros">
+            <summary>
+            É um array, uma lista, de objetos do tipo ParametroFluxo, cada objeto ParametroFluxo tem dois atributos: NmParametro e VlParametro.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -29,14 +29,15 @@ namespace Neurotech.Api.Controllers
         /// Recurso para consultar o motor Neurotech
         /// </summary>
         /// <remarks></remarks>
-        /// <param name="model"></param>
+        /// <param name="model">Modelo com os parâmetros de entrada</param>
         /// <returns>Resposta obtida pelo motor após análise</returns>
         [HttpPost]
         [Route("sync-register")]
         public async Task<IActionResult> Post([FromBody]RegisterModel model)
         {
             var command = new RegisterCommand(_mapper.Map<SubmitVO>(model));
-            return Ok(await _mediator.Send(command));
+            var result = _mapper.Map<ResultModel>(await _mediator.Send(command));
+            return Ok(result);
         }
     }
 }

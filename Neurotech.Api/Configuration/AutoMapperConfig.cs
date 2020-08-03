@@ -11,7 +11,7 @@ namespace Neurotech.Api.Configuration
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            services.AddAutoMapper(typeof(ModelToValueObjectMappingProfile));
+            services.AddAutoMapper(typeof(ModelToValueObjectMappingProfile), typeof(ValueObjectToModelMappingProfile));
         }
     }
 }

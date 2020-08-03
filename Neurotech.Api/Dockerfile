@@ -8,6 +8,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["Neurotech.Api/Neurotech.Api.csproj", "Neurotech.Api/"]
+COPY ["Neurotech.Services/Neurotech.Services.csproj", "Neurotech.Services/"]
+COPY ["Neurotech.Application/Neurotech.Application.csproj", "Neurotech.Application/"]
 RUN dotnet restore "Neurotech.Api/Neurotech.Api.csproj"
 COPY . .
 WORKDIR "/src/Neurotech.Api"
