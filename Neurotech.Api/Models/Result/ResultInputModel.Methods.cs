@@ -10,11 +10,11 @@ namespace Neurotech.Api.Models
     {
         public ResultInputModel(InputVO model)
         {
-            Name = model.Name;
-            Value = model.Value;
-            Description = model.Description;
-            Order = model.Order;
-            Visible = model.Visible;
+            Nome = model.Name;
+            Valor = model.Value;
+            Descricao = model.Description;
+            Ordem = model.Order;
+            Visibilidade = model.Visible;
         }
     }
 }

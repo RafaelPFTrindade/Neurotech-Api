@@ -32,22 +32,8 @@ namespace Neurotech.Api
         {
             services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Version = "v1",
-                    Title = "Neurotech API",
-                    Description = "API para integração com o motor de análise da Neurotech"
-                });
-
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath);
-            });
-
+            services.AddSwaggerConfiguration();
             services.AddAutoMapperConfiguration();
-
 
             services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
             {
@@ -71,14 +57,11 @@ namespace Neurotech.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-            // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Motor Neurotech V1");
             });
 
             app.UseHttpsRedirection();

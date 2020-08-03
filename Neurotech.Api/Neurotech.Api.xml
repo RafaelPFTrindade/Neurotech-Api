@@ -12,6 +12,11 @@
             <param name="model">Modelo com os parâmetros de entrada</param>
             <returns>Resposta obtida pelo motor após análise</returns>
         </member>
+        <member name="T:Neurotech.Api.Models.CredenciaisModel">
+            <summary>
+            Modelo para inserção de dados de autenticação com o motor Neurotech.
+            </summary>
+        </member>
         <member name="P:Neurotech.Api.Models.CredenciaisModel.nmCodigoAssociado">
             <summary>
              Este código representa o cadastro do cliente na base da Neurotech.
@@ -27,6 +32,11 @@
             Senha de utilização do Webservice, por filial
             </summary>
         </member>
+        <member name="T:Neurotech.Api.Models.InputModel">
+            <summary>
+            Modelo de objetos com atributos de entrada para a política informada
+            </summary>
+        </member>
         <member name="P:Neurotech.Api.Models.InputModel.NmParametro">
             <summary>
              Nome do parâmetro de entrada. Exemplo: USUARIO, RETORNO_FILTRO_VARIAVEIS, RETORNO_FILTRO_REGEXES
@@ -35,6 +45,11 @@
         <member name="P:Neurotech.Api.Models.InputModel.VlParametro">
             <summary>
             Valor do parâmetro.
+            </summary>
+        </member>
+        <member name="T:Neurotech.Api.Models.RegisterModel">
+            <summary>
+            Tipo complexo contendo dados do registro
             </summary>
         </member>
         <member name="P:Neurotech.Api.Models.RegisterModel.IdProposta">
@@ -65,6 +80,151 @@
         <member name="P:Neurotech.Api.Models.RegisterModel.LsParametros">
             <summary>
             É um array, uma lista, de objetos do tipo ParametroFluxo, cada objeto ParametroFluxo tem dois atributos: NmParametro e VlParametro.
+            </summary>
+        </member>
+        <member name="T:Neurotech.Api.Models.ResultInputModel">
+            <summary>
+            Classe com as variáveis de entrada de uma regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultInputModel.Nome">
+            <summary>
+            Nome da variável de entrada da regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultInputModel.Valor">
+            <summary>
+            Valor da variável de entrada da regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultInputModel.Descricao">
+            <summary>
+            Descrição da variável de entrada
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultInputModel.Ordem">
+            <summary>
+            Ordem da variável de entrada
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultInputModel.Visibilidade">
+            <summary>
+            Visibilidade da variável de entrada
+            </summary>
+        </member>
+        <member name="T:Neurotech.Api.Models.ResultModel">
+            <summary>
+            Modelo do retorno da chamada do motor
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultModel.CdOperacao">
+            <summary>
+            é o identificador único da proposta processada
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultModel.CdMensagem">
+            <summary>
+            Código da Mensagem Final
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultModel.DsMensagem">
+            <summary>
+            Descrição da mensagem final
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultModel.HoraInicio">
+            <summary>
+            Hora de início do processamento
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultModel.HoraFim">
+            <summary>
+            Hora do fim do processamento
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultModel.Resultado">
+            <summary>
+            Valor que a variável NmFluxoResultado, passada como parâmetro adquire ao final do processamento de dados
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultModel.lsRetorno">
+            <summary>
+            Uma lista contendo as variáveis desta política 
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultModel.LsRegra">
+            <summary>
+            Uma lista de objetos do tipo RetornoRegra que descreve todas as regras que foram ativas durante a execução da política.
+            </summary>
+        </member>
+        <member name="T:Neurotech.Api.Models.ResultOutputModel">
+            <summary>
+            Modelo de dados chave-valor 
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultOutputModel.Chave">
+            <summary>
+            Chave da variável
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultOutputModel.Valor">
+            <summary>
+            Valor da variável
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.ResultOutputModel.Tipo">
+            <summary>
+            Tipo da variável
+            </summary>
+        </member>
+        <member name="T:Neurotech.Api.Models.RuleResultModel">
+            <summary>
+            Objetos que descrevem todas as regras que foram ativas durante a execução da política
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.Nome">
+            <summary>
+            Nome da regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.FlagStatus">
+            <summary>
+            Status da regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.Descricao">
+            <summary>
+            Descrição da regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.DescricaoAnalitica">
+            <summary>
+            Descrição completa da regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.DescricaoSintetica">
+            <summary>
+            Descrição resumida da regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.LsEntradas">
+            <summary>
+            Lista com as variáveis de entrada da Regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.RegraPai">
+            <summary>
+            Nome da regra pai
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.StartTime">
+            <summary>
+            Data/Hora início da execução da regra
+            </summary>
+        </member>
+        <member name="P:Neurotech.Api.Models.RuleResultModel.EndTime">
+            <summary>
+            Data/Hora fim da execução da regra
             </summary>
         </member>
     </members>

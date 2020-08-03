@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Neurotech.Api.Models
 {
+    /// <summary>
+    /// Tipo complexo contendo dados do registro
+    /// </summary>
     public class RegisterModel
     {
         /// <summary>

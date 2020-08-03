@@ -14,12 +14,14 @@ namespace Neurotech.Api.AutoMapper
         public ValueObjectToModelMappingProfile()
         {
             CreateMap<ResultVO, ResultModel>()
-                .ForMember(d => d.EndTime, opts => opts.MapFrom(s => s.EndTime))
-                .ForMember(d => d.Message, opts => opts.MapFrom(s => s.Message))
-                .ForMember(d => d.OperationCode, opts => opts.MapFrom(s => s.OperationCode))
-                .ForMember(d => d.Result, opts => opts.MapFrom(s => s.Result.Result))
-                .ForPath(d => d.Outputs, opts => opts.MapFrom(s => s.Result.Outputs.Select(x => new ResultOutputModel(x.Key, x.Value, x.Type))))
-                .ForPath(d => d.RuleResults, opts => opts.MapFrom(s => s.Result.RuleResults.Select(x => new RuleResultModel(x))));
+                .ForMember(d => d.HoraFim, opts => opts.MapFrom(s => s.EndTime))
+                .ForMember(d => d.DsMensagem, opts => opts.MapFrom(s => s.Message))
+                .ForMember(d => d.CdOperacao, opts => opts.MapFrom(s => s.OperationCode))
+                .ForMember(d => d.CdMensagem, opts => opts.MapFrom(s => s.StatusCode))
+                .ForMember(d => d.HoraInicio, opts => opts.MapFrom(s => s.StartTime))
+                .ForMember(d => d.Resultado, opts => opts.MapFrom(s => s.Result.Result))
+                .ForPath(d => d.lsRetorno, opts => opts.MapFrom(s => s.Result.Outputs.Select(x => new ResultOutputModel(x))))
+                .ForPath(d => d.LsRegra, opts => opts.MapFrom(s => s.Result.RuleResults.Select(x => new RuleResultModel(x))));
         }
     }
 }

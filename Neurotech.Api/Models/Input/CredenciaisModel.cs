@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Neurotech.Api.Models
 {
+    /// <summary>
+    /// Modelo para inserção de dados de autenticação com o motor Neurotech.
+    /// </summary>
     public class CredenciaisModel
     {
         /// <summary>

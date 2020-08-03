@@ -10,15 +10,15 @@ namespace Neurotech.Api.Models
     {
         public RuleResultModel(RuleResultVO model)
         {
-            Name = model.Name;
-            Inputs = model.Inputs?.Select(i => new ResultInputModel(i)).ToArray();
+            Nome = model.Name;
+            LsEntradas = model.Inputs?.Select(i => new ResultInputModel(i)).ToArray();
             EndTime = model.EndTime;
-            ParentRuleName = model.ParentRuleName;
-            ResultCompleteDescription = model.ResultCompleteDescription;
-            ResultSimpleDescription = model.ResultSimpleDescription;
-            RuleDescription = model.RuleDescription;
+            RegraPai = model.ParentRuleName;
+            DescricaoAnalitica = model.ResultCompleteDescription;
+            DescricaoSintetica = model.ResultSimpleDescription;
+            Descricao = model.RuleDescription;
             StartTime = model.StartTime;
-            Status = model.Status;
+            FlagStatus = model.Status;
         }
     }
 }

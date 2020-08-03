@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Neurotech.Api.Models
 {
+    /// <summary>
+    /// Modelo de objetos com atributos de entrada para a política informada
+    /// </summary>
     public class InputModel
     {
         /// <summary>

@@ -5,10 +5,22 @@ using System.Threading.Tasks;
 
 namespace Neurotech.Api.Models
 {
+    /// <summary>
+    /// Modelo de dados chave-valor 
+    /// </summary>
     public partial class ResultOutputModel
     {
-        public string Key { get; set; }
-        public string Value { get; set; }
-        public object Type { get; set; }
+        /// <summary>
+        /// Chave da variável
+        /// </summary>
+        public string Chave { get; set; }
+        /// <summary>
+        /// Valor da variável
+        /// </summary>
+        public string Valor { get; set; }
+        /// <summary>
+        /// Tipo da variável
+        /// </summary>
+        public object Tipo { get; set; }
     }
 }

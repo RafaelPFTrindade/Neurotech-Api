@@ -10,9 +10,9 @@ namespace Neurotech.Api.Models
     {
         public ResultOutputModel(OutputVO model)
         {
-            Key = model.Key;
-            Value = model.Value;
-            Type = model.Type;
+            Chave = model.Key;
+            Valor = model.Value;
+            Tipo = model.Type;
         }
     }
 }
